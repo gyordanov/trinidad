@@ -169,7 +169,7 @@ module Trinidad
           log = java.io.File.new(dir, prefix + "" + suffix)
           if log.exists
             date = _date
-            if date.empty?
+            if !date || date.empty?
               date = log.lastModified
               # we're abuse Timestamp to get a date formatted !
               # just like the super does internally (just in case)
